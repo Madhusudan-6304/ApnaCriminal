@@ -1,0 +1,58 @@
+{
+    "Ashwath": {
+        "age": "25",
+        "gender": "Male",
+        "crime": "nexalit",
+        "image": "criminal_db\\Ashwath.jpg",
+        "embedding": "criminal_db\\Ashwath.npy"
+    },
+    "Manoj": {
+        "age": "24",
+        "gender": "Male",
+        "crime": "Bank Thief",
+        "image": "criminal_db\\Manoj.jpg",
+        "embedding": "criminal_db\\Manoj.npy"
+    },
+    "Jeevan": {
+        "age": "22",
+        "gender": "Male",
+        "crime": "Cyber thief",
+        "image": "criminal_db\\Jeevan.jpg",
+        "embedding": "criminal_db\\Jeevan.npy"
+    },
+    "Binladen": {
+        "age": "75",
+        "gender": "Male",
+        "crime": "Terrorist",
+        "image": "criminal_db\\Binladen.jpg",
+        "embedding": "criminal_db\\Binladen.npy"
+    },
+    "john": {
+        "age": "48",
+        "gender": "Male",
+        "crime": "Kidnapper",
+        "image": "criminal_db\\john.jpg",
+        "embedding": "criminal_db\\john.npy"
+    },
+    "charles": {
+        "age": "24",
+        "gender": "Male",
+        "crime": "Drug ",
+        "image": "criminal_db\\charles.jpg",
+        "embedding": "criminal_db\\charles.npy"
+    },
+    "warren": {
+        "age": "56",
+        "gender": "Male",
+        "crime": "mafia ",
+        "image": "criminal_db\\warren.jpg",
+        "embedding": "criminal_db\\warren.npy"
+    },
+    "Madhu": {
+        "age": "25",
+        "gender": "Male",
+        "crime": "Don",
+        "image": "criminal_db\\Madhu.jpg",
+        "embedding": "criminal_db\\Madhu.npy"
+    }
+}

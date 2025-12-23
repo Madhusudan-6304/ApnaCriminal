@@ -1,0 +1,127 @@
+/* VoiceAnalyzer.css
+   Styles intended to reproduce the visual tone of the original Tailwind-based layout.
+   Save this as src/components/VoiceAnalyzer.css and ensure it's imported by VoiceAnalyzer.jsx
+*/
+
+/* Reset-ish */
+.va-root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #e6edf3; background: #0f1724; min-height: 100vh; display: flex; flex-direction: column; }
+.va-header { background: #0f1724; border-bottom: 1px solid rgba(148,163,184,0.06); }
+.va-header-inner { max-width: 1100px; margin: 0 auto; padding: 16px; display: flex; align-items: center; justify-content: space-between; }
+.va-brand { display:flex; align-items:center; gap:10px; }
+.va-brand-icon { color: #ef4444; width:32px; height:32px; }
+.va-title { font-weight:700; font-size:18px; letter-spacing:0.6px; color: #fff; }
+.va-secure-badge { background: rgba(16,185,129,0.06); color:#10b981; border:1px solid rgba(16,185,129,0.12); padding:6px 10px; border-radius:6px; font-family:monospace; font-size:12px; }
+
+.va-config { background: rgba(15,23,42,0.35); border-top: 1px solid rgba(148,163,184,0.02); }
+.va-config-inner { max-width:1100px; margin:0 auto; padding:8px 16px; display:flex; align-items:center; justify-content:flex-end; gap:8px; }
+.va-mail-icon { color:#60a5fa; width:16px; height:16px; }
+.va-config-label { color:#94a3b8; font-size:13px; display:none; }
+@media(min-width:640px) { .va-config-label { display:inline-block; } }
+
+.va-input { background:#0b1220; color:#e6edf3; border:1px solid rgba(148,163,184,0.06); padding:6px 10px; border-radius:6px; outline:none; width:240px; font-size:13px; }
+.va-input:focus { box-shadow:0 0 0 3px rgba(59,130,246,0.12); border-color: rgba(59,130,246,0.6); }
+
+/* main area */
+.va-main { padding: 28px 16px; flex:1; display:flex; justify-content:center; }
+.va-container { width:100%; max-width:1100px; }
+
+/* error */
+.va-error { background: rgba(153,27,27,0.2); border:1px solid rgba(239,68,68,0.15); color:#fecaca; padding:12px; border-radius:8px; display:flex; gap:8px; align-items:center; margin-bottom:18px; }
+
+/* centered card */
+.va-centered-card { display:flex; justify-content:center; margin-top:28px; }
+.va-card-inner { background: linear-gradient(180deg, rgba(10,12,16,0.7), rgba(7,9,12,0.6)); border:1px solid rgba(148,163,184,0.04); padding:28px; width:100%; max-width:760px; border-radius:14px; text-align:center; }
+.va-lock-circle { width:64px; height:64px; border-radius:40px; background:#0b1220; margin:0 auto 12px; display:flex; align-items:center; justify-content:center; }
+.va-h2 { font-size:24px; margin:8px 0 12px; color:#fff; }
+.va-desc { color:#9ca3af; max-width:640px; margin:0 auto 18px; }
+.va-btn { display:inline-flex; align-items:center; gap:8px; padding:10px 18px; border-radius:999px; font-weight:700; cursor:pointer; border:none; transition: all .15s ease; }
+.va-btn:active { transform: translateY(1px); }
+.va-btn-record { background: #2563eb; color:#fff; box-shadow: 0 6px 18px rgba(37,99,235,0.12); }
+.va-btn-record:hover { background:#1e40af; }
+.va-icon-small { width:16px; height:16px; }
+
+/* recording state */
+.va-pulse { animation: va-pulse 1s linear infinite alternate; color:#60a5fa; }
+@keyframes va-pulse { from { opacity:1; transform:translateY(0);} to { opacity:0.7; transform:translateY(-2px);} }
+
+.va-visualizer { width:100%; height:150px; border-radius:8px; border:1px solid rgba(148,163,184,0.04); background:linear-gradient(180deg,#071021,#0b1220); display:block; margin:12px 0; }
+
+/* controls */
+.va-controls { display:flex; flex-direction:column; gap:10px; align-items:center; margin-top:10px; }
+@media(min-width:640px){ .va-controls { flex-direction:row; justify-content:center; } }
+.va-btn-stop { background:#dc2626; color:#fff; padding:10px 22px; border-radius:999px; }
+.va-muted { color:#94a3b8; font-size:12px; }
+
+/* stored reference card */
+.va-card-inner.locked { position:relative; overflow:hidden; padding:28px; }
+.va-big-fingerprint { position:absolute; top:8px; right:8px; opacity:0.08; width:160px; height:160px; color:#fff; }
+.va-locked-line { display:flex; align-items:center; gap:8px; justify-content:center; color:#34d399; margin-bottom:12px; }
+.va-lock-dot { width:8px; height:8px; background:#10b981; border-radius:999px; box-shadow:0 0 10px rgba(16,185,129,0.3); }
+.va-actions-row { display:flex; gap:12px; justify-content:center; margin-top:14px; align-items:center; }
+.va-btn-green { background:#16a34a; color:#000; padding:12px 20px; border-radius:999px; font-weight:700; }
+.va-link { color:#94a3b8; background:transparent; border:none; cursor:pointer; display:inline-flex; gap:8px; align-items:center; }
+
+/* result terminal */
+.va-terminal { width:100%; max-width:880px; margin: 8px auto; border-radius:12px; border:1px solid rgba(148,163,184,0.03); background:#000; overflow:hidden; }
+.va-analyzing { border:2px solid rgba(34,197,94,0.18); box-shadow:0 0 20px rgba(34,197,94,0.06); min-height:300px; padding:18px; }
+.va-terminal-inner { padding:18px; position:relative; color:#a7f3d0; min-height:220px; }
+.va-terminal-header { display:flex; justify-content:space-between; border-bottom:1px solid rgba(34,197,94,0.08); padding-bottom:8px; margin-bottom:8px; color:#86efac; }
+
+/* analyzing logs */
+.va-logs { margin-top:12px; color:#9ae6b4; font-family:monospace; font-size:14px; }
+.va-log { opacity:0.85; margin-bottom:6px; }
+.va-loader { margin-top:12px; animation: va-bounce 1s infinite; color:#a7f3d0; }
+@keyframes va-bounce { 0%{ transform:translateY(0)} 50%{ transform:translateY(-6px)} 100%{ transform:translateY(0)} }
+
+/* result match / mismatch */
+.va-match { border:2px solid rgba(239,68,68,0.12); box-shadow:0 0 30px rgba(239,68,68,0.08); background:#050505; }
+.va-mismatch { border:2px solid rgba(148,163,184,0.03); background:#040404; }
+.va-terminal-inner.padded { padding:20px; }
+.va-terminal-title { display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; }
+.va-title-text { font-size:20px; font-weight:800; color:#cbd5e1; }
+.va-title-text.va-danger { color:#fb7185; text-shadow:0 0 10px rgba(239,68,68,0.18); }
+.va-confidence { font-size:12px; border:1px solid rgba(148,163,184,0.06); padding:6px 8px; border-radius:6px; }
+
+/* grid for report */
+.va-grid { display:grid; grid-template-columns:1fr; gap:12px; }
+@media(min-width:900px){ .va-grid { grid-template-columns: 1fr 1fr; } }
+
+.va-column { display:flex; flex-direction:column; gap:12px; }
+.va-card { background:#07101a; border:1px solid rgba(148,163,184,0.04); padding:12px; border-radius:10px; }
+.va-card-title { color:#94a3b8; font-size:12px; text-transform:uppercase; margin-bottom:6px; }
+.va-card-body { color:#d1d5db; font-size:14px; line-height:1.5; }
+
+/* tags */
+.va-tags { display:flex; flex-wrap:wrap; gap:8px; }
+.va-tag { background:#06121a; color:#86efac; padding:6px 10px; border-radius:8px; border:1px solid rgba(16,185,129,0.08); font-size:12px; }
+
+/* modulation bypass */
+.va-modtype { color:#f59e0b; font-weight:700; }
+
+/* alert card */
+.va-alert-card { background: rgba(153,27,27,0.03); border:1px solid rgba(153,27,27,0.06); padding:12px; border-radius:10px; }
+.va-alert-title { color:#fb7185; font-size:12px; display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+.va-ready { color:#d1fae5; font-size:13px; display:flex; flex-direction:column; gap:6px; }
+.va-prep { color:#fca5a5; }
+
+/* actions */
+.va-actions { display:flex; gap:12px; margin-top:16px; align-items:center; justify-content:flex-end; }
+.va-btn-muted { background:#0b1220; color:#e6edf3; border:1px solid rgba(148,163,184,0.04); padding:10px 14px; border-radius:8px; }
+.va-btn-icon { background:#0b1220; border:1px solid rgba(148,163,184,0.04); padding:8px; border-radius:8px; display:inline-flex; align-items:center; justify-content:center; }
+.va-btn-primary { background:#dc2626; color:#fff; padding:10px 14px; border-radius:8px; display:inline-flex; gap:8px; align-items:center; text-decoration:none; }
+.va-action-group { display:flex; gap:8px; align-items:center; }
+
+/* small note */
+.va-note { font-size:11px; color:#94a3b8; margin-top:8px; text-align:center; }
+
+/* results container */
+.va-results { margin-top:14px; }
+
+/* responsive */
+@media(max-width:640px){
+  .va-terminal-inner { font-size:14px; padding:14px; }
+  .va-title-text { font-size:16px; }
+}
+
+/* small utilities */
+.va-muted { color:#94a3b8; font-size:12px; }
